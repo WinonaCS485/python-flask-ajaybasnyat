@@ -16,12 +16,12 @@ try:
         
         # execute the SQL command
         cursor.execute(sql)
-        
+
         studentList = ""
-        # get the results
+
         for student in cursor:
-            
-        
+            studentList = studentList + str(student) + "<br>"
+
 finally:
     connection.close()
 
@@ -41,4 +41,4 @@ def students():
     return  studentList
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0', port=9785)
